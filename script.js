@@ -1,8 +1,8 @@
 document.getElementById('sales').addEventListener('change', updateSalesNumber);
 
 const phoneBook = {
-  "aurel": "0895-0946-2888",
-  "fauzan": "0813-7769-6939"
+  "Aurel": "0895-0946-2888",
+  "Fauzan": "0813-7769-6939"
 };
 
 function updateSalesNumber () {

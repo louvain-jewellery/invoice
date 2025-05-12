@@ -96,6 +96,7 @@ input, select, textarea, button {
 input {
   text-align: end;
   flex: 1;
+  text-transform: capitalize;
 }
 
 input[type=number]::-webkit-outer-spin-button,
