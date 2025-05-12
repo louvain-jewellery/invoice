@@ -90,7 +90,7 @@ input, select, textarea, button {
   font-family: Arial, Helvetica, sans-serif;
   border: none;
   height: 30px;
-  background-color: white;
+  background: none;
 }
 
 input {
@@ -110,6 +110,8 @@ select {
   text-align: right;
   padding-right: 10px;
   cursor: pointer;
+  flex: 1;
+  width: 100px;
 }
 
 textarea {
@@ -130,6 +132,13 @@ button {
   cursor: pointer;
   align-items: center;
   justify-content: center;
+}
+
+
+@media (max-width: 1024px) {  /* tab horizontal */
+  main {
+    margin: 50px;
+  }
 }
 
 @media (max-width: 768px) { /* phone */
@@ -154,12 +163,6 @@ button {
 
   .top-section {
     gap: 10px;
-  }
-}
- 
-@media (max-width: 1024px) {  /* tab horizontal */
-  main {
-    margin: 50px;
   }
 }
 
