@@ -1,0 +1,22 @@
+{
+  "name": "Invoice Louvain",
+  "short_name": "Invoice",
+  "description": "LOUVAIN Invoice Input System",
+  "scope": "/invoice/",
+  "start_url": "/invoice/",
+  "display": "standalone",
+  "background_color": "#ffffff",
+  "theme_color": "#ffffff",
+  "icons": [
+    {
+      "src": "favicon.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    },
+    {
+      "src": "favicon.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    }
+  ]
+}
