@@ -112,6 +112,7 @@ function updateSalesNumber () {
 
   if (phoneBook[selectedName]) {
     salesPhone.value = phoneBook[selectedName];
+    salesPhone.dispatchEvent(new Event('input'));
   }
 }
 
