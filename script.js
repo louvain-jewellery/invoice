@@ -63,23 +63,6 @@ document.addEventListener("DOMContentLoaded", async () => {
   });
 });
 
-document.getElementById('sales').addEventListener('change', updateSalesNumber);
-
-const phoneBook = {
-  "Aurel": "089509462888",
-  "Fauzan": "081377696939"
-};
-
-function updateSalesNumber () {
-  const salesName = document.getElementById('sales');
-  const salesPhone = document.getElementById('salesPhone');
-  const selectedName = salesName.value.trim();
-
-  if (phoneBook[selectedName]) {
-    salesPhone.value = phoneBook[selectedName];
-  }
-}
-
 document.querySelectorAll('.currency').forEach(input => {
     input.addEventListener('input', function (e) {
         let value = e.target.value.replace(/[^,\d]/g, '').toString(); // remove non-numeric chars
@@ -114,5 +97,22 @@ document.querySelectorAll('.phone').forEach(input => {
     });
 });
 
+
+document.getElementById('sales').addEventListener('change', updateSalesNumber);
+
+const phoneBook = {
+  "Aurel": "089509462888",
+  "Fauzan": "081377696939"
+};
+
+function updateSalesNumber () {
+  const salesName = document.getElementById('sales');
+  const salesPhone = document.getElementById('salesPhone');
+  const selectedName = salesName.value.trim();
+
+  if (phoneBook[selectedName]) {
+    salesPhone.value = phoneBook[selectedName];
+  }
+}
 
 });
