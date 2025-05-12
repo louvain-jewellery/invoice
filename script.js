@@ -73,7 +73,7 @@ const phoneBook = {
 function updateSalesNumber () {
   const salesName = document.getElementById('sales');
   const salesPhone = document.getElementById('salesPhone');
-  const selectedName = salesName.value.toLowerCase().trim();
+  const selectedName = salesName.value.trim();
 
   if (phoneBook[selectedName]) {
     salesPhone.value = phoneBook[selectedName];
