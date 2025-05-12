@@ -1,20 +1,3 @@
-document.getElementById('sales').addEventListener('change', updateSalesNumber);
-
-const phoneBook = {
-  "Aurel": "089509462888",
-  "Fauzan": "081377696939"
-};
-
-function updateSalesNumber () {
-  const salesName = document.getElementById('sales');
-  const salesPhone = document.getElementById('salesPhone');
-  const selectedName = salesName.value.toLowerCase().trim();
-
-  if (phoneBook[selectedName]) {
-    salesPhone.value = phoneBook[selectedName];
-  }
-}
-
 document.addEventListener("DOMContentLoaded", async () => {
   document.getElementById('submitButton').addEventListener('click', () => {
     const requiredFields = document.querySelectorAll('input[required], select[required]');
@@ -79,6 +62,23 @@ document.addEventListener("DOMContentLoaded", async () => {
     alert("Submission failed.");
   });
 });
+
+document.getElementById('sales').addEventListener('change', updateSalesNumber);
+
+const phoneBook = {
+  "Aurel": "089509462888",
+  "Fauzan": "081377696939"
+};
+
+function updateSalesNumber () {
+  const salesName = document.getElementById('sales');
+  const salesPhone = document.getElementById('salesPhone');
+  const selectedName = salesName.value.toLowerCase().trim();
+
+  if (phoneBook[selectedName]) {
+    salesPhone.value = phoneBook[selectedName];
+  }
+}
 
 document.querySelectorAll('.currency').forEach(input => {
     input.addEventListener('input', function (e) {
