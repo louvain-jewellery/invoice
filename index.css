@@ -97,6 +97,9 @@ input {
   text-align: end;
   flex: 1;
   width: 100px;
+}
+
+#customerName {
   text-transform: capitalize;
 }
 
