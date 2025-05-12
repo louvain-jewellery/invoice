@@ -1,8 +1,8 @@
 document.getElementById('sales').addEventListener('change', updateSalesNumber);
 
 const phoneBook = {
-  "Aurel": "0895-0946-2888",
-  "Fauzan": "0813-7769-6939"
+  "Aurel": "089509462888",
+  "Fauzan": "081377696939"
 };
 
 function updateSalesNumber () {
@@ -97,4 +97,22 @@ document.querySelectorAll('.currency').forEach(input => {
         e.target.value = rupiah ? 'Rp ' + rupiah : ''; // add Rp and set the value
     });
 });
+
+document.querySelectorAll('.phone').forEach(input => {
+    input.addEventListener('input', function (e) {
+        let value = e.target.value.replace(/[^0-9]/g, '').slice(0, 13); // Allow max 13 digits only
+
+        let part1 = value.slice(0, 4);
+        let part2 = value.slice(4, 8);
+        let part3 = value.slice(8, 13);
+
+        let formatted = part1;
+        if (part2) formatted += '-' + part2;
+        if (part3) formatted += '-' + part3;
+
+        e.target.value = formatted;
+    });
+});
+
+
 });
