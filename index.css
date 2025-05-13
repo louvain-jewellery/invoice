@@ -143,6 +143,7 @@ button {
   cursor: pointer;
   align-items: center;
   justify-content: center;
+  box-shadow: 0.5vw 0.5vw 0px lightgray;
 }
 
 
