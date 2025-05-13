@@ -77,7 +77,7 @@ document.querySelectorAll('.currency').forEach(input => {
         }
 
         rupiah = split[1] !== undefined ? rupiah + ',' + split[1] : rupiah; // handle decimal part
-        e.target.value = rupiah ? 'Rp ' + rupiah : ''; // add Rp and set the value
+        e.target.value = rupiah ? 'Rp. ' + rupiah : ''; // add Rp and set the value
     });
 });
 
