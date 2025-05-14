@@ -15,7 +15,7 @@ document.addEventListener("DOMContentLoaded", async () => {
 
     // If any required field is empty, prevent submission and alert the user
     if (!allFieldsFilled) {
-        alert('Please fill all required fields.');
+        alert('Tolong isi data yang kosong.');
         return;
     }
 
@@ -29,7 +29,7 @@ document.addEventListener("DOMContentLoaded", async () => {
   formData.append("entry.817393732", document.getElementById('sales').value);
   formData.append("entry.1928733728", document.getElementById('salesPhone').value);
   formData.append("entry.1798966034", document.getElementById('estimatedCompletion').value);
-  
+
   formData.append("entry.1691521261", document.getElementById('womenRingMaterial').value);
   formData.append("entry.787146032", document.getElementById('womenRingGem').value);
   formData.append("entry.465737398", document.getElementById('womenRingWeight').value);
@@ -58,44 +58,44 @@ document.addEventListener("DOMContentLoaded", async () => {
     mode: "no-cors", // this is essential
     body: formData
   }).then(() => {
-    alert("Order submitted successfully!");
+    alert("Invoice berhasil dibuat!");
   }).catch(() => {
-    alert("Submission failed.");
+    alert("Invoice gagal dibuat :(");
   });
 });
 
 document.querySelectorAll('.currency').forEach(input => {
-    input.addEventListener('input', function (e) {
-        let value = e.target.value.replace(/[^,\d]/g, '').toString(); // remove non-numeric chars
-        let split = value.split(',');
-        let sisa = split[0].length % 3; // find the remainder when dividing by 3
-        let rupiah = split[0].substr(0, sisa); // get the first part
-        let ribuan = split[0].substr(sisa).match(/\d{3}/gi); // get the groups of 3 digits
+  input.addEventListener('input', function (e) {
+    let value = e.target.value.replace(/[^,\d]/g, '').toString(); // remove non-numeric chars
+    let split = value.split(',');
+    let sisa = split[0].length % 3; // find the remainder when dividing by 3
+    let rupiah = split[0].substr(0, sisa); // get the first part
+    let ribuan = split[0].substr(sisa).match(/\d{3}/gi); // get the groups of 3 digits
 
-        if (ribuan) {
-            let separator = sisa ? '.' : ''; // if there's any remainder, add the separator
-            rupiah += separator + ribuan.join('.'); // join the 3-digit groups with dots
-        }
+    if (ribuan) {
+        let separator = sisa ? '.' : ''; // if there's any remainder, add the separator
+        rupiah += separator + ribuan.join('.'); // join the 3-digit groups with dots
+    }
 
-        rupiah = split[1] !== undefined ? rupiah + ',' + split[1] : rupiah; // handle decimal part
-        e.target.value = rupiah ? 'Rp. ' + rupiah : ''; // add Rp and set the value
-    });
+    rupiah = split[1] !== undefined ? rupiah + ',' + split[1] : rupiah; // handle decimal part
+    e.target.value = rupiah ? 'Rp. ' + rupiah : ''; // add Rp and set the value
+  });
 });
 
 document.querySelectorAll('.phone').forEach(input => {
-    input.addEventListener('input', function (e) {
-        let value = e.target.value.replace(/[^0-9]/g, '').slice(0, 13); // Allow max 13 digits only
+  input.addEventListener('input', function (e) {
+    let value = e.target.value.replace(/[^0-9]/g, '').slice(0, 13); // Allow max 13 digits only
 
-        let part1 = value.slice(0, 4);
-        let part2 = value.slice(4, 8);
-        let part3 = value.slice(8, 13);
+    let part1 = value.slice(0, 4);
+    let part2 = value.slice(4, 8);
+    let part3 = value.slice(8, 13);
 
-        let formatted = part1;
-        if (part2) formatted += '-' + part2;
-        if (part3) formatted += '-' + part3;
+    let formatted = part1;
+    if (part2) formatted += '-' + part2;
+    if (part3) formatted += '-' + part3;
 
-        e.target.value = formatted;
-    });
+    e.target.value = formatted;
+  });
 });
 
 
@@ -103,7 +103,7 @@ document.getElementById('sales').addEventListener('change', updateSalesNumber);
 
 const phoneBook = {
   "Aurel": "089509462888",
-  "Fauzan": "081377696939"
+  "Fauzan": "082383386774"
 };
 
 function updateSalesNumber () {
