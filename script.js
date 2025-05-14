@@ -29,6 +29,7 @@ document.addEventListener("DOMContentLoaded", async () => {
   formData.append("entry.817393732", document.getElementById('sales').value);
   formData.append("entry.1928733728", document.getElementById('salesPhone').value);
   formData.append("entry.1798966034", document.getElementById('estimatedCompletion').value);
+  
   formData.append("entry.1691521261", document.getElementById('womenRingMaterial').value);
   formData.append("entry.787146032", document.getElementById('womenRingGem').value);
   formData.append("entry.465737398", document.getElementById('womenRingWeight').value);
