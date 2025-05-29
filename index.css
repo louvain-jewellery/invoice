@@ -127,6 +127,7 @@ input {
 
 #estimatedCompletion {
   text-align: right;
+  width: min-content;
 }
 
 input[type=number]::-webkit-outer-spin-button,
