@@ -18,9 +18,7 @@ document.addEventListener("DOMContentLoaded", async () => {
         alert('Tolong isi data yang kosong.');
         return;
     }
-
-  
-
+    
     const formData = new FormData();
 
     formData.append("entry.403788479", document.getElementById('customerName').value);
