@@ -18,7 +18,7 @@ document.addEventListener("DOMContentLoaded", async () => {
         alert('Tolong isi data yang kosong.');
         return;
     }
-    
+
     const formData = new FormData();
 
     formData.append("entry.403788479", document.getElementById('customerName').value);
@@ -78,7 +78,7 @@ document.querySelectorAll('.currency').forEach(input => {
     }
 
     rupiah = split[1] !== undefined ? rupiah + ',' + split[1] : rupiah; // handle decimal part
-    e.target.value = rupiah ? rupiah : ''; // add Rp and set the value
+    e.target.value = 'Rp. ' + rupiah ? rupiah : ''; // add Rp and set the value
   });
 });
 
