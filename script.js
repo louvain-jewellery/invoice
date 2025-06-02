@@ -57,9 +57,9 @@ document.addEventListener("DOMContentLoaded", async () => {
     formData.append("entry.281323647", document.getElementById('menRingModel').value);
     
     formData.append("entry.262501710", document.getElementById('notesBox').value || "-");
-    formData.append("entry.443879785", document.getRawNumber('estimatedPrice'));
-    formData.append("entry.1527336053", document.getRawNumber('downPayment'));
-    formData.append("entry.153171518", document.getRawNumber('purchasedGold'));
+    formData.append("entry.443879785", getRawNumber('estimatedPrice'));
+    formData.append("entry.1527336053", getRawNumber('downPayment'));
+    formData.append("entry.153171518", getRawNumber('purchasedGold'));
 
     fetch("https://docs.google.com/forms/u/0/d/e/1FAIpQLSd3BbkTWkmq9BN4JsJPKdGgm_9feJElIz9iUJKFrkqjOYuHmQ/formResponse", {
       method: "POST",
