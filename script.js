@@ -7,8 +7,10 @@ document.addEventListener("DOMContentLoaded", async () => {
     requiredFields.forEach(field => {
         if (!field.value.trim()) {
             allFieldsFilled = false;
+            field.style.borderWidth = "1px";
             field.style.borderColor = 'red'; // Optionally highlight the empty field
         } else {
+            field.style.borderWidth = "none";
             field.style.borderColor = ''; // Reset border color if filled
         }
     });
@@ -20,6 +22,12 @@ document.addEventListener("DOMContentLoaded", async () => {
     }
 
     const formData = new FormData();
+
+    function getRawNumber(inputId) {
+      const raw = document.getElementById(inputId).value;
+      const cleaned = raw.replace(/[^0-9]/g, ''); // Remove Rp., dots, commas
+      return cleaned || "-"; // If empty, return "-"
+    }
 
     formData.append("entry.403788479", document.getElementById('customerName').value);
     formData.append("entry.372677485", document.getElementById('customerPhone').value);
@@ -49,9 +57,9 @@ document.addEventListener("DOMContentLoaded", async () => {
     formData.append("entry.281323647", document.getElementById('menRingModel').value);
     
     formData.append("entry.262501710", document.getElementById('notesBox').value || "-");
-    formData.append("entry.443879785", document.getElementById('estimatedPrice').value.trim() || "-");
-    formData.append("entry.1527336053", document.getElementById('downPayment').value.trim() || "-");
-    formData.append("entry.153171518", document.getElementById('purchasedGold').value.trim() || "-");
+    formData.append("entry.443879785", document.getRawNumber('estimatedPrice'));
+    formData.append("entry.1527336053", document.getRawNumber('downPayment'));
+    formData.append("entry.153171518", document.getRawNumber('purchasedGold'));
 
     fetch("https://docs.google.com/forms/u/0/d/e/1FAIpQLSd3BbkTWkmq9BN4JsJPKdGgm_9feJElIz9iUJKFrkqjOYuHmQ/formResponse", {
       method: "POST",
@@ -78,7 +86,7 @@ document.querySelectorAll('.currency').forEach(input => {
     }
 
     rupiah = split[1] !== undefined ? rupiah + ',' + split[1] : rupiah; // handle decimal part
-    e.target.value = 'Rp. ' + rupiah ? rupiah : ''; // add Rp and set the value
+    e.target.value = rupiah ? 'Rp. ' + rupiah : ''; // add Rp and set the value
   });
 });
 
