@@ -41,7 +41,7 @@ document.addEventListener("DOMContentLoaded", async () => {
     formData.append("entry.1691521261", document.getElementById('womenRingMaterial').value);
     formData.append("entry.787146032", document.getElementById('womenRingGem').value);
     formData.append("entry.465737398", document.getElementById('womenRingWeight').value);
-    formData.append("entry.255825511", document.getElementById('womenRingSize').value);
+    formData.append("entry.255825511", document.getElementById('womenRingSize').value); 
     formData.append("entry.1561675587", document.getElementById('womenRingColor').value);
     formData.append("entry.258612834", document.getElementById('womenRingFinish').value);
     formData.append("entry.1519526121", document.getElementById('womenRingEngravement').value);
